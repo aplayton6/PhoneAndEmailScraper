@@ -2,8 +2,8 @@
 
 import re, pyperclip
 
-#TODO: Create a regex for phone numbers
-re.compile(r'''
+# Create a regex for phone numbers
+phoneRegex = re.compile(r'''
 #000-000-0000, 000-0000, (000) 000-0000, 000-0000 ext 0000, ext. 0000, x0000
 
 ((\d\d\d) | (\(\d\d\d\)))?        # area code (optional)
@@ -18,7 +18,14 @@ re.compile(r'''
 
 
 
-#TODO: Create a regex for email addresses
+# Create a regex for email addresses
+emailRegex = re.compile(r'''
+#example.+_example@something.com
+
+[a-zA-Z0-0_.+]+        # name part
+@        # @ symbol
+[a-zA-Z0-0_.+]+        # domain name part
+''', re.VERBOSE)
 
 #TODO: Get the text off the clipboard
 
